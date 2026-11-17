@@ -4,79 +4,112 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DJ² Capital Research</title>
-<meta name="description" content="DJ² Capital Research — student M&A research by Davin Jain. Issue 01: EQB Inc.'s acquisition of PC Financial from Loblaw.">
+<meta name="description" content="DJ² Capital Research: an M&A and restructuring research portfolio by Davin Jain.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cpath d=%27M14 36C14 6 50 6 50 36%27 fill=%27none%27 stroke=%27%23FF6A13%27 stroke-width=%276%27/%3E%3Crect x=%279%27 y=%2734%27 width=%2712%27 height=%2722%27 rx=%275%27 fill=%27%23FF6A13%27/%3E%3Crect x=%2743%27 y=%2734%27 width=%2712%27 height=%2722%27 rx=%275%27 fill=%27%23FF6A13%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  :root { --ink: #14213d; --muted: #5a6472; --line: #e3e6ea; --accent: #1f4e79; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: var(--ink); background: #fff; line-height: 1.6; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  header { border-bottom: 1px solid var(--line); }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-  .nav { display: flex; align-items: baseline; justify-content: space-between; padding: 28px 0 20px; }
-  .brand { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; color: var(--ink); }
-  .brand sup { font-size: 14px; }
-  nav a { margin-left: 28px; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-  nav a:hover { color: var(--ink); }
-  section { padding: 48px 0; }
-  h1 { font-size: 34px; line-height: 1.25; letter-spacing: -0.5px; margin-bottom: 16px; }
-  h2 { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
-  p { margin-bottom: 14px; max-width: 640px; }
-  .muted { color: var(--muted); }
-  .issue { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; }
-  .issue a.cover { display: block; flex: 0 0 320px; max-width: 100%; border: 1px solid var(--line); box-shadow: 0 4px 18px rgba(20,33,61,0.12); line-height: 0; }
-  .issue a.cover img { width: 100%; height: auto; display: block; }
-  .issue a.cover:hover { box-shadow: 0 8px 28px rgba(20,33,61,0.18); }
-  .issue-body { flex: 1 1 320px; }
-  .issue-body h3 { font-size: 24px; line-height: 1.3; margin-bottom: 6px; }
-  .issue-body h3 a { color: var(--ink); }
-  .issue-date { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
-  .tag { display: inline-block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; margin: 0 6px 14px 0; color: var(--muted); }
-  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
-  footer p { margin-bottom: 6px; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: #000; font-family: "EB Garamond", Garamond, Georgia, serif; font-size: 20px; line-height: 1.6; }
+header, main, footer { max-width: 720px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+header { padding-top: 40px; padding-bottom: 24px; text-align: center; }
+h1 { font-weight: 500; font-size: 44px; letter-spacing: 0.01em; margin: 0 20px; }
+h1 a { color: #000; text-decoration: none; }
+h1 .logo { display: block; width: 280px; max-width: 70%; height: auto; margin: 0 auto 8px; }
+nav a { color: #000; text-decoration: none; margin: 0 14px; font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid transparent; }
+nav a:hover, nav a.active { border-bottom-color: #000; }
+main { padding-top: 40px; padding-bottom: 96px; }
+.view { display: none; border-top: 1px solid #000; padding-top: 40px; }
+.view.active { display: block; }
+h2 { font-weight: 500; font-size: 28px; margin: 0 16px; }
+p { margin: 0 16px; }
+.muted { font-style: italic; }
+details.creator { border-top: 1px solid #000; border-bottom: 1px solid #000; padding: 14px 0; margin-top: 32px; }
+details.creator summary { cursor: pointer; list-style: none; font-size: 22px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+details.creator summary::-webkit-details-marker { display: none; }
+details.creator summary::after { content: ""; width: 9px; height: 9px; border-right: 1.5px solid #000; border-bottom: 1.5px solid #000; transform: rotate(45deg); margin-right: 4px; transition: transform 0.2s; }
+details.creator[open] summary::after { transform: rotate(225deg); }
+details.creator p { margin: 14px 0; }
+details.creator ul { margin: 8px 0; padding-left: 24px; }
+details.creator a { color: #000; text-decoration: none; border-bottom: 1px solid #000; margin-left: 14px; }
+footer { padding-bottom: 48px; font-size: 16px; }
+footer .inner { border-top: 1px solid #000; padding-top: 24px; }
+.powered { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.links a { color: #000; margin-right: 20px; text-decoration: none; border-bottom: 1px solid #000; }
+.mark { font-weight: 500; letter-spacing: 0.02em; }
+.issue { border-top: 1px solid #000; border-bottom: 1px solid #000; padding: 20px 0 4px; }
+.thumb { display: block; width: 100%; max-width: 420px; margin: 0 20px; border: 1px solid #000; line-height: 0; }
+.thumb img { width: 100%; height: auto; display: block; }
+.thumb:hover { opacity: 0.88; }
+.issue-date { font-size: 16px; letter-spacing: 0.08em; margin: 0 8px; }
+.issue-no { font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 4px; }
+.issue h3 { font-weight: 500; font-size: 28px; margin: 0 12px; }
+.issue h3 a, .issue-link a { color: #000; text-decoration: none; border-bottom: 1px solid #000; }
+@media (max-width: 520px) { body { font-size: 18px; } h1 { font-size: 34px; } header { padding-top: 48px; } nav a { margin: 0 9px; font-size: 16px; } }
 </style>
 </head>
 <body>
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">DJ<sup>2</sup> Capital Research</a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-    </nav>
-  </div>
+<h1><a href="#about" aria-label="DJ² Capital Research"><svg class="logo" viewBox="0 0 800 515" role="img" aria-label="DJ² Capital Research" xmlns="http://www.w3.org/2000/svg"><g fill="#FF6A13"><rect x="330" y="42" width="30" height="45" rx="10" /><rect x="440" y="42" width="30" height="45" rx="10" /></g><path d="M345 50 A55 42 0 0 1 455 50" fill="none" stroke="#FF6A13" stroke-width="10" stroke-linecap="round" /><g fill="#111" font-family="'EB Garamond', Garamond, Georgia, serif"><text x="170" y="395" font-size="318" font-weight="600">DJ</text><text x="526" y="258" font-size="150" font-weight="600">2</text><text x="5" y="509" font-size="48" font-weight="500" textLength="790" lengthAdjust="spacing">CAPITAL RESEARCH</text></g></svg></a></h1>
+<nav><a href="#about" data-view="about">About</a><a href="#portfolio" data-view="portfolio">Portfolio</a></nav>
 </header>
-
-<main class="wrap">
-  <section id="about">
-    <h2>About</h2>
-    <h1>Student M&amp;A research, published as issues.</h1>
-    <p>DJ<sup>2</sup> Capital Research is a student research project by Davin Jain (NYU Stern &rsquo;30) covering mergers and acquisitions: transaction structure, valuation, and early results, built from primary sources.</p>
-    <p class="muted">Contact: <a href="mailto:davinjain@stern.nyu.edu">davinjain@stern.nyu.edu</a></p>
-  </section>
-
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="issue">
-      <a class="cover" href="issue-01-eqb-pc-financial.pdf">
-        <img src="issue-01-cover.png" alt="Issue 01 cover: EQB x PC Financial">
-      </a>
-      <div class="issue-body">
-        <h3><a href="issue-01-eqb-pc-financial.pdf">Issue 01 &mdash; EQB x PC Financial</a></h3>
-        <p class="issue-date">November 17, 2026 &middot; 35 pages (PDF)</p>
-        <p><span class="tag">M&amp;A</span><span class="tag">Banks</span><span class="tag">Canada</span></p>
-        <p>EQB Inc.&rsquo;s acquisition of PC Financial from Loblaw Companies Limited &mdash; announced December 3, 2025, closed July 1, 2026. Transaction terms, valuation against precedents and trading comps, and early results.</p>
-        <p><a href="issue-01-eqb-pc-financial.pdf">Read the full deck (PDF) &rarr;</a></p>
-      </div>
-    </div>
-  </section>
+<main>
+<section class="view" id="about">
+<h2>About DJ<sup>2</sup> Capital Research + AI Integration</h2>
+<p>DJ<sup>2</sup> Capital Research is a research portfolio. My research is primarily in where my interests lie: M&amp;A and restructuring. I leverage AI to build valuations, slides and financial analysis. The prompt engineering is my own.</p>
+<p>I started this after learning the theory and fundamentals of finance, to apply these concepts to the kind of work I&rsquo;ll likely see in the industry. Taking an Excel with AI course and having conversations with AI engineers in the fintech space sparked my interest in building this project.</p>
+<p>It&rsquo;s one side of my preparation for investment banking, and more of a passion project. It&rsquo;s also a way to build skills that carry over: prompt engineering, AI in Excel and PowerPoint, web design, investment analysis and presentation building.</p>
+<p>The other side is studying theory through a traditional investment banking recruitment lens.</p>
+<p><em><strong>For clarity: the slides are created through AI research that I prompt, using real, sourced data. The investment recommendations based on the analysis are purely my own.</strong></em></p>
+<details class="creator">
+<summary>About Me</summary>
+<p>I&rsquo;m Davin, a freshman studying finance and accounting at NYU Stern (Class of 2030). I&rsquo;m deeply interested in pursuing investment banking, and specifically passionate about M&amp;A and restructuring.</p>
+<p>I&rsquo;m originally from Toronto, Canada.</p>
+<p>Outside of school, I love:</p>
+<ul>
+<li>Rowing</li>
+<li>Skiing</li>
+<li>Golfing</li>
+<li>Pickleball</li>
+<li>Duplicate bridge</li>
+<li>Watching the Toronto Maple Leafs, Toronto Raptors, and Cincinnati Bengals</li>
+</ul>
+<p class="contact">Contact me: <a href="https://www.linkedin.com/in/davinjain/" target="_blank" rel="noopener">LinkedIn</a> <a href="mailto:davinjain@stern.nyu.edu">davinjain@stern.nyu.edu</a></p>
+</details>
+</section>
+<section class="view" id="portfolio">
+<h2>Portfolio</h2>
+<div class="issue">
+<p class="issue-no">Issue 01</p>
+<p class="issue-date">November 17, 2026</p>
+<h3><a href="issue-01-eqb-pc-financial.pdf" target="_blank" rel="noopener">EQB x PC Financial</a></h3>
+<a class="thumb" href="issue-01-eqb-pc-financial.pdf" target="_blank" rel="noopener" aria-label="Open Issue 01 (PDF): EQB x PC Financial"><img src="issue-01-cover.png" alt="Issue 01 cover: EQB x PC Financial"></a>
+<p>EQB Inc.&rsquo;s acquisition of PC Financial from Loblaw: transaction, valuation and early results. Announced December 3, 2025; closed July 1, 2026.</p>
+</div>
+</section>
 </main>
-
 <footer>
-  <div class="wrap">
-    <p>Last updated: 11/17/2026</p>
-    <p>&copy; 2026 DJ<sup>2</sup> Capital Research | For informational and educational purposes only. Not investment advice.</p>
-  </div>
+<div class="inner">
+<div class="powered"><span>Assisted by</span> <span class="mark">Claude</span> <span class="mark">Meta Muse</span></div>
+<p class="links"><a href="https://www.linkedin.com/in/davinjain/" target="_blank" rel="noopener">LinkedIn</a> <a href="mailto:davinjain@stern.nyu.edu">davinjain@stern.nyu.edu</a> <span>Last updated: 11/17/2026</span></p>
+&copy; 2026 DJ<sup>2</sup> Capital Research&nbsp;|&nbsp;For informational and educational purposes only. Not investment advice.
+</div>
 </footer>
+<script>
+var views = ["about", "portfolio"];
+function show() {
+  var h = (location.hash || "").replace("#", "");
+  if (views.indexOf(h) === -1) h = "about";
+  views.forEach(function(v) {
+    document.getElementById(v).classList.toggle("active", v === h);
+  });
+  document.querySelectorAll("nav a").forEach(function(a) {
+    a.classList.toggle("active", a.dataset.view === h);
+  });
+}
+window.addEventListener("hashchange", show);
+show();
+</script>
 </body>
 </html>
